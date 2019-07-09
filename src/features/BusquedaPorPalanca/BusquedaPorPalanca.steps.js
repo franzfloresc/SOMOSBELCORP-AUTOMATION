@@ -1,14 +1,18 @@
-const BusquedaPorPalanca = require('../../pages/Login/Login.module')
+const Login = require('../../pages/Login/Login.module')
+const Palancas=require('../../pages/Palancas/Palancas.module')
 
 Given('Ingreso el {string} mi {string} y mi {string}', function (Pais, Usuario, Password) {
-    BusquedaPorPalanca.Constructor();
-    BusquedaPorPalanca.LoginPage(Pais, Usuario, Password);
-    BusquedaPorPalanca.SiPopUp_Cerrar();
+    Login.Constructor();
+    Login.LoginPage(Pais, Usuario, Password);
+    Login.SiPopUp_Cerrar();
 });
 
 When('Ingreso al landingPage de la palanca {string}', function(Palanca){
-    //modulo.BuscarProducto(Producto);
-    
+    Palancas.Constructor();
+    Palancas.IrLandingGanaMas();
+    Palancas.ValidacionLandingGanaMas();
+    Palancas.AgregarVariosProductos();
+    Palancas.ValidacionCantCarrito();
 });
 
 When('Elijo un producto según su {string} e ingreso a su detalle', function(CUV){

@@ -7,8 +7,8 @@ exports.config = {
     Puppeteer: {
 
       //url: 'http://sb2qa.somosbelcorp.com/',
-      //url: 'https://www.somosbelcorp.com/',
-      url:'https://sbganaqa.somosbelcorp.com/',
+      url: 'https://www.somosbelcorp.com/',
+      //url:'https://sbganaqa.somosbelcorp.com/',
       //fullPageScreenshots: true,
       windowSize: "1350x720",
       show:true,

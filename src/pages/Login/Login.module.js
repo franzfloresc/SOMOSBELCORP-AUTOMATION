@@ -51,11 +51,19 @@ module.exports = {
     },
 
     async SiPopUp_Cerrar(){
+
+        I.click(locator.btnCerrarPopupSR);
+
+        /*
         const popup=await within('#PopShowroomVenta', ()=>{
             return I.grabTextFrom({css:'div.saludo_consultora_showroom'});
         });
+
         if(I.see(popup)){
             I.click(locator.btnCerrarPopupSR);
         }
+
+        I.seeElement('#PopShowroomVenta')*/
+       
     }
 }
