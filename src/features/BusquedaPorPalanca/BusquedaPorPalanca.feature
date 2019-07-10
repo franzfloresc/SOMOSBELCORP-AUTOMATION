@@ -13,5 +13,5 @@ Scenario Outline:  Añadir productos de la palanca Ofertas Para Ti al carrito
 Examples:
     |Pais   | Usuario       | Password      |Palanca        |  CUV |
     #|PE     | 000771570     | 1             | OPT           |      |
-    |PE     | 008424152     | 07635789      | OPT           |      |
+    #|PE     | 008424152     | 07635789      | OPT           |      |
     |PE     | 008424152     | 07635789      | SR            |      |

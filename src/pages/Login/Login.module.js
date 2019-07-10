@@ -50,9 +50,12 @@ module.exports = {
         I.seeInCurrentUrl('/Bienvenida');
     },
 
-    async SiPopUp_Cerrar(){
+    SiPopUp_Cerrar(){
+        I.seeElement(locator.btnCerrarPopupSR);
 
-        I.click(locator.btnCerrarPopupSR);
+        (async()=>{
+            await I.click(locator.btnCerrarPopupSR);
+        })();
 
         /*
         const popup=await within('#PopShowroomVenta', ()=>{

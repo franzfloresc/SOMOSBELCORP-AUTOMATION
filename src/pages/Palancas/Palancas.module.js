@@ -11,14 +11,20 @@ module.exports = {
     },
    
     IrLandingGanaMas(){
-        I.say("Validación inicial del botón GanaMas");
-        I.seeElement(locator.btnGanaMas);
-        I.retry(wait).click(locator.btnGanaMas);
+        //I.retry(wait).say("Validación inicial del botón GanaMas");
+        
+        pause();
+        (async()=>{
+            //await I.seeElement(locator.btnGanaMas);
+            await I.retry(wait).click(locator.btnGanaMas);
+        })();
+        //pause();
     },
 
-    async ValidacionLandingGanaMas(){
-        I.say("Validación inicial del landing GanaMas");
-        await I.seeElement(locator.btnGanaMasInicio);
+    ValidacionLandingGanaMas(){
+        I.retry(wait).say("Validación inicial del landing GanaMas");
+        I.retry(wait).seeElement(locator.btnGanaMasInicio);
+        
     },
 
     AgregarVariosProductos(){
@@ -30,22 +36,22 @@ module.exports = {
     },
 
     async AgregarUnProducto(){
-        I.say("Se agregará el primer producto de la palanca ShowRoom");
-        await I.click(locator.palancaShowRoom.listBtnAgregalo[0]);
+        I.retry(wait).say("Se agregará el primer producto de la palanca ShowRoom");
+        await I.retry(wait).click(locator.palancaShowRoom.listBtnAgregalo[0]);
     },
 
     async ValidacionMsjProdAdd(){
-        I.say("Se validará que haya aparecido el popup de Producto Agregado");
-        await I.seeElement(locator.popupAgregado);
+        I.retry(wait).say("Se validará que haya aparecido el popup de Producto Agregado");
+        await I.retry(wait).seeElement(locator.popupAgregado);
     },
 
     ValidacionCantCarrito(){
-        I.say("Se validará que la cantidad mostrada en el carrito corresponde a la cantidad de productos agregados.")
+        I.retry(wait).say("Se validará que la cantidad mostrada en el carrito corresponde a la cantidad de productos agregados.")
         var lblCantProd=I.grabTextFrom(locator.lblCantProd);
         if(intCantAgregar==parseInt(lblCantProd)){
-            I.say("Flujo correcto: cantidades coinciden.");
+            I.retry(wait).say("Flujo correcto: cantidades coinciden.");
         }else{
-            I.say("Flujo incorrecto: cantidades no coinciden.")
+            I.retry(wait).say("Flujo incorrecto: cantidades no coinciden.")
         }
     }
 }
