@@ -29,15 +29,11 @@ module.exports = {
             await this.AgregarUnProducto();
             await this.ValidacionMsjProdAdd();
             I.wait(1);
-            console.log("Agregada nro: ".concat(i));
-            //pause();
-            //Agregar wait???
         }
     },
 
     async AgregarUnProducto(){
         I.retry(wait).say("Se agregará el primer producto de la palanca ShowRoom");
-        //pause();
         await I.retry(wait).click(locator.btnAgregarPrimerProd);
     },
 
@@ -46,13 +42,18 @@ module.exports = {
         await I.retry(wait).seeElement(locator.popupAgregado);
     },
 
-    ValidacionCantCarrito(){
+    async ValidacionCantCarrito(){
         I.retry(wait).say("Se validará que la cantidad mostrada en el carrito corresponde a la cantidad de productos agregados.")
-        var lblCantProd=I.grabTextFrom(locator.lblCantProd);
+       
+        //var lblCantProd=I.grabTextFrom(locator.lblCantProd);
+        var lblCantProd=await I.grabTextFrom(locator.lblCantProd);
+
         if(intCantAgregar==parseInt(lblCantProd)){
             I.retry(wait).say("Flujo correcto: cantidades coinciden.");
+            console.log("Flujo correcto: Las cantidades coinciden.")
         }else{
             I.retry(wait).say("Flujo incorrecto: cantidades no coinciden.")
+            console.log("Flujo incorrecto: Las cantidades no coinciden. /n Encontrado: ".concat(lblCantProd).concat("/n Esperado: ").concat(intCantAgregar));
         }
     }
 }

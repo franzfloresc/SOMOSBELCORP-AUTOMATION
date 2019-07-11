@@ -12,7 +12,7 @@ When('Ingreso al landingPage de la palanca {string}', async function(Palanca){
     await Palancas.IrLandingGanaMas();
     Palancas.ValidacionLandingGanaMas();
     await Palancas.AgregarVariosProductos();
-    //Palancas.ValidacionCantCarrito();
+    await Palancas.ValidacionCantCarrito();
 });
 
 When('Elijo un producto según su {string} e ingreso a su detalle', function(CUV){
