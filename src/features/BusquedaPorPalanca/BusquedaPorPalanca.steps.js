@@ -1,19 +1,17 @@
 const Login = require('../../pages/Login/Login.module')
 const Palancas=require('../../pages/Palancas/Palancas.module')
 
-Given('Ingreso el {string} mi {string} y mi {string}', function (Pais, Usuario, Password) {
+Given('Ingreso el {string} mi {string} y mi {string}', async function (Pais, Usuario, Password) {
     Login.Constructor();
     Login.LoginPage(Pais, Usuario, Password);
-    //pause();
-    Login.SiPopUp_Cerrar();
+    await Login.SiPopUp_Cerrar();
 });
 
-When('Ingreso al landingPage de la palanca {string}', function(Palanca){
+When('Ingreso al landingPage de la palanca {string}', async function(Palanca){
     Palancas.Constructor();
-    Palancas.IrLandingGanaMas();
-    //pause();
+    await Palancas.IrLandingGanaMas();
     Palancas.ValidacionLandingGanaMas();
-    //Palancas.AgregarVariosProductos();
+    await Palancas.AgregarVariosProductos();
     //Palancas.ValidacionCantCarrito();
 });
 

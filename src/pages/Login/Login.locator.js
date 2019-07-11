@@ -9,7 +9,7 @@ config = {
         btnLogin:{xpath:"//input[@id='btnLogin']"},
         btnLoginFB:{xpath:"//select[@id='ddlPais']"},
         popupShowRoom:{xpath:"//div[@class='saludo_consultora_showroom']"},
-        btnCerrarPopupSR:{xpath:"//div[@class='content_pop_up_intriga']/a[@class='cerrar_fichaProducto']"}
+        btnCerrarPopupSR:{xpath:'//*[@id="PopShowroomVenta"]/div/a'}
     }
   }
   

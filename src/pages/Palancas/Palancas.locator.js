@@ -8,6 +8,7 @@ config = {
         btnGanaMasInicio:{xpath:"//a[@title='Inicio']"},
         popupAgregado:{xpath:"//div[text()='¡Listo! Agregaste con éxito a tu pedido.']"},
         lblCantProd:{xpath:"//a/p[@id='pCantidadProductosPedido']"},
+        btnAgregarPrimerProd:{xpath:"(//a[contains(text(),'AGRÉGALO')])[1]"},
 
         seccionPalanca:{
             showRoom:{xpath:"//div[@data-seccion='SR']"},
