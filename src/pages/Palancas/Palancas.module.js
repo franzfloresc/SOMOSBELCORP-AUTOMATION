@@ -1,5 +1,5 @@
 const I = actor();
-let wait = { retries: 2, minTimeout: 2000 };
+let wait = { retries: 5, minTimeout: 2000 };
 const config= require('./Palancas.locator')
 let locator=config.locator; 
 var intCantAgregar=3;

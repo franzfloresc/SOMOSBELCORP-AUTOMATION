@@ -15,5 +15,6 @@ When Ingresa al carrito
 Then Verificara que se haya agregado el producto al carrito la <cantidad>
 
 Examples:
-| Pais | Usuario | Password |  cantidad |
-| PE |038978802| 1 | 7 |
+| Pais | Usuario   | Password | cantidad |
+| PE   | 008424152 | 07635789 | 4        |
+#| PE |038978802| 1 | 7 |
