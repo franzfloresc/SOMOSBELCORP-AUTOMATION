@@ -21,15 +21,17 @@ Given('Selecciona la seccion dorada de gana mas',async function(){
     AgregarPedido.ValidacionLandingGanaMas();
 });
 
-When('Selecciona un producto' ,async function(){
-    await AgregarPedido.AgregarVariosProductos();
+When('Selecciona uno o varios productos' ,function(){
+    //await AgregarPedido.AgregarVariosProductos(cantidad);
 });
 
-Then('Agregara un producto',function(){});
+Then('Agregara {int} producto',async function(cantidad){
+    await AgregarPedido.AgregarVariosProductos(cantidad);
+});
+
 Then('Visualizar el popup de confirmacion de agregado',function(){});
 Then('Visualizar el check de agregado en la oferta',function(){});
 When('Ingresa al carrito',function(){});
-
 
 Then('Verificara que se haya agregado el producto al carrito la {int}',async function(cantidad){
     await AgregarPedido.ValidacionCantCarrito(cantidad);

@@ -6,6 +6,7 @@ const assert = require('assert');
 //var intCantAgregar=0;
 var intCantInicio=0;
 var intCantFinal=0;
+var textoCarrito="";
 
 module.exports={
   Constructor(){
@@ -44,6 +45,7 @@ async AgregarUnProducto(){
 async ValidacionMsjProdAdd(){
     I.retry(wait).say("Se validará que haya aparecido el popup de Producto Agregado");
     await I.retry(wait).seeElement(locator.popupAgregado);
+    await I.retry(wait).dontSeeElement(locator.popupAgregado);
 },
 
 async ValidacionCantCarrito(intCantAgregar){
@@ -61,6 +63,12 @@ async ValidacionCantCarrito(intCantAgregar){
         I.retry(wait).say("Flujo incorrecto: cantidades no coinciden.")
         console.log("Flujo incorrecto: Las cantidades no coinciden. /n Añadido: ".concat(intCantFinal-intCantInicio).concat("/n Esperado: ").concat(intCantAgregar));
     }
+
+    await I.moveCursorTo(locator.lblCarritoCompras);
+    textoCarrito=await I.grabTextFrom(locator.lblContenedorItems);
+    console.log("Texto a mostrar".concat(textoCarrito));
+    //I.pause();
+    
 }
     
 

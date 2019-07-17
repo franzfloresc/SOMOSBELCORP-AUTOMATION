@@ -8,6 +8,8 @@ config = {
        popupAgregado:{xpath:"//div[text()='¡Listo! Agregaste con éxito a tu pedido.']"},
        lblCantProd:{xpath:"//a/p[@id='pCantidadProductosPedido']"},
        btnAgregarPrimerProd:{xpath:"(//a[contains(text(),'AGRÉGALO')])[1]"},
+       lblCarritoCompras:{xpath:"//div[@class='campana cart_compras visibilidadEnlaceMenu']"},
+       lblContenedorItems:{xpath:"//div[@id='carrito_items']"}
 
     }
 }
